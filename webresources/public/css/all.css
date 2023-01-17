@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html, body
+{
+    padding: 0;
+    margin: 0;
+    background: #222;
+}
+
+.main
+{
+    margin: 48px auto;
+    width: 80%;
+}
+
+*
+{
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+.loader
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.loader > i
+{
+    font-size: 48px;
+    animation: spin 1s linear infinite;
+    z-index: 10000;
+}
+
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+.map
+{
+    display: inline-block;
+    width: 300px;
+    height: 275px;
+    margin: 12px;
+
+    background: #111;
+    overflow: none;
+    transition: 0.2s;
+}
+
+.map:hover
+{
+    transform: scale(1.05);
+    cursor: pointer;
+
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.map:hover > img
+{
+    opacity: 1;
+}
+
+.map > img
+{
+    width: 100%;
+    height: 196px;
+    object-fit: cover;
+    background-size: cover;
+
+    opacity: 0.9;
+
+    transition: 0.2s;
+}
+
+.map > .contents
+{
+    padding: 4px;
+}
+
+.map > .contents > .header
+{
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.map > .contents > .holder
+{
+    padding: 8px 0;
+}
+
+.map > .contents > .holder > .username
+{
+    font-size: 16px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.map > .contents > .holder > img
+{
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+
+    margin: 0 2px 0 8px;
+}
+
+.fixed-leaderboard
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 800px;
+    background: #222;
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+}
+
+.fixed-leaderboard > .banner
+{
+    width: 100%;
+    height: 156px;
+    background: #111;
+
+    object-fit: cover;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* blur background */
+    backdrop-filter: blur(8px);
+
+    overflow: none;
+}
+
+.fixed-leaderboard > .banner > span
+{
+    display: block;
+    font-size: 26px;
+    font-weight: 900;
+    z-index: 100;
+}
+
+.fixed-leaderboard > .banner > .image
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size: cover;
+
+    overflow: none;
+
+    filter: blur(4px);
+}
+
+.fixed-leaderboard > .leaderboard-entries
+{
+    width: 100%;
+    height: 644px;
+}
+
+.leaderboard-entries {
+    width: 100%;
+    height: 644px;
+}
+
+.fixed-leaderboard > .leaderboard-entries::-webkit-scrollbar
+{
+    width: 0;
+}
+
+.fixed-leaderboard > .leaderboard-entries > .leaderboard-entry
+{
+    width: 100%;
+    height: 64px;
+    padding: 0px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaderboard-entries > .leaderboard-entry
+{
+    width: 100%;
+    height: 64px;
+    padding: 0px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fixed-leaderboard > .leaderboard-entries > .leaderboard-entry > .rank
+{
+    display: block;
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 64px;
+    margin: 0 16px;
+}
+.fixed-leaderboard > .leaderboard-entries > .leaderboard-entry > .username
+{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+.fixed-leaderboard > .leaderboard-entries > .leaderboard-entry > .time
+{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.leaderboard-entries > .leaderboard-entry > .username
+{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.leaderboard-entries > .leaderboard-entry > .time
+{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.fixed-leaderboard > .close-leaderboard
+{
+    position: absolute;
+    top: 12px;
+    right: 21px;
+    width: 64px;
+    height: 64px;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 64px;
+    cursor: pointer;
+    z-index: 400;
+    text-decoration: none;
+
+    opacity: 0.8;
+
+    transition: 0.2s;
+}
+
+.fixed-leaderboard > .close-leaderboard:hover
+{
+    opacity: 1;
+}
+
+.blurer
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9998;
+
+    backdrop-filter: blur(8px);
+}
+
+.medal
+{
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
